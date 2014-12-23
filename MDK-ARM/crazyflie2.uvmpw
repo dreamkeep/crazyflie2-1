@@ -17,6 +17,10 @@
 
   <project>
     <PathAndName>.\crazyflie2-nrf-firmware.uvprojx</PathAndName>
+  </project>
+
+  <project>
+    <PathAndName>.\crazyflie2-stm-bootloader.uvproj</PathAndName>
     <NodeIsActive>1</NodeIsActive>
   </project>
 
