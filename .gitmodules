@@ -1,0 +1,3 @@
+[submodule "crazyflie2-nrf-mbs"]
+	path = crazyflie2-nrf-mbs
+	url = https://github.com/x893/crazyflie2-nrf-mbs.git
