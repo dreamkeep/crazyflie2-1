@@ -1,0 +1,6 @@
+MDK-ARM/build/
+*.build_log.htm
+*.uvguix.*
+*.uvoptx
+*.uvgui.*
+*.uvopt
