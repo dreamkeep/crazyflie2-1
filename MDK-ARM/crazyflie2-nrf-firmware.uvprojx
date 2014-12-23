@@ -7,7 +7,7 @@
 
   <Targets>
     <Target>
-      <TargetName>crazyflie2-nrf-mbs</TargetName>
+      <TargetName>crazyflie2-nrf-firmware</TargetName>
       <ToolsetNumber>0x4</ToolsetNumber>
       <ToolsetName>ARM-ADS</ToolsetName>
       <TargetOption>
@@ -46,14 +46,14 @@
             <NotGenerated>0</NotGenerated>
             <InvalidFlash>1</InvalidFlash>
           </TargetStatus>
-          <OutputDirectory>.\build\crazyflie2-nrf-mbs\</OutputDirectory>
-          <OutputName>crazyflie2-nrf-mbs</OutputName>
+          <OutputDirectory>.\build\crazyflie2-nrf-firmware\</OutputDirectory>
+          <OutputName>crazyflie2-nrf-firmware</OutputName>
           <CreateExecutable>1</CreateExecutable>
           <CreateLib>0</CreateLib>
           <CreateHexFile>0</CreateHexFile>
           <DebugInformation>1</DebugInformation>
           <BrowseInformation>1</BrowseInformation>
-          <ListingPath>.\build\crazyflie2-nrf-mbs\</ListingPath>
+          <ListingPath>.\build\crazyflie2-nrf-firmware\</ListingPath>
           <HexFormatSelection>1</HexFormatSelection>
           <Merge32K>0</Merge32K>
           <CreateBatchFile>0</CreateBatchFile>
@@ -309,8 +309,8 @@
               </OCR_RVCT3>
               <OCR_RVCT4>
                 <Type>1</Type>
-                <StartAddress>0x3f000</StartAddress>
-                <Size>0x1000</Size>
+                <StartAddress>0x16000</StartAddress>
+                <Size>0x2a000</Size>
               </OCR_RVCT4>
               <OCR_RVCT5>
                 <Type>1</Type>
@@ -362,10 +362,10 @@
             <uC99>1</uC99>
             <useXO>0</useXO>
             <VariousControls>
-              <MiscControls>--gnu --diag_suppress=1295</MiscControls>
-              <Define></Define>
+              <MiscControls>--gnu --preinclude=sys-gnu.h --diag_suppress=1295</MiscControls>
+              <Define>S110=1 BLE=1 BLE_STACK_SUPPORT_REQD</Define>
               <Undefine></Undefine>
-              <IncludePath>..\crazyflie2-nrf-mbs\include;..\crazyflie2-nrf-mbs\include\nrf;..\crazyflie2-nrf-mbs\include\cm0;.\s110\s110_nrf51822_7.0.0_API\include;.\src</IncludePath>
+              <IncludePath>..\crazyflie2-nrf-firmware\Include;..\crazyflie2-nrf-firmware\Include\gcc;..\crazyflie2-nrf-firmware\interface;.\s110\s110_nrf51822_7.0.0_API\include;.\nrf51_sdk\nrf51822\Include;.\nrf51_sdk\nrf51822\Include\ble;.\nrf51_sdk\nrf51822\Include\ble\ble_services;.\nrf51_sdk\nrf51822\Include\app_common;.\nrf51_sdk\nrf51822\Include\sd_common;.\src</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -380,7 +380,7 @@
             <useXO>0</useXO>
             <VariousControls>
               <MiscControls></MiscControls>
-              <Define>__NO_VECTORS</Define>
+              <Define></Define>
               <Undefine></Undefine>
               <IncludePath></IncludePath>
             </VariousControls>
@@ -409,16 +409,6 @@
           <GroupName>src</GroupName>
           <Files>
             <File>
-              <FileName>main.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\crazyflie2-nrf-mbs\src\main.c</FilePath>
-            </File>
-            <File>
-              <FileName>crc.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\crazyflie2-nrf-mbs\src\crc.c</FilePath>
-            </File>
-            <File>
               <FileName>arm_startup_nrf51.s</FileName>
               <FileType>2</FileType>
               <FilePath>.\src\arm_startup_nrf51.s</FilePath>
@@ -426,31 +416,147 @@
             <File>
               <FileName>system_nrf51.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\crazyflie2-nrf-mbs\system_nrf51.c</FilePath>
+              <FilePath>..\crazyflie2-nrf-firmware\system_nrf51.c</FilePath>
+            </File>
+            <File>
+              <FileName>main.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\crazyflie2-nrf-firmware\src\main.c</FilePath>
+            </File>
+            <File>
+              <FileName>esb.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\crazyflie2-nrf-firmware\src\esb.c</FilePath>
+            </File>
+            <File>
+              <FileName>uart.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\crazyflie2-nrf-firmware\src\uart.c</FilePath>
+            </File>
+            <File>
+              <FileName>syslink.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\crazyflie2-nrf-firmware\src\syslink.c</FilePath>
+            </File>
+            <File>
+              <FileName>pm.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\crazyflie2-nrf-firmware\src\pm.c</FilePath>
+            </File>
+            <File>
+              <FileName>systick.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\crazyflie2-nrf-firmware\src\systick.c</FilePath>
+            </File>
+            <File>
+              <FileName>button.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\crazyflie2-nrf-firmware\src\button.c</FilePath>
+            </File>
+            <File>
+              <FileName>swd.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\crazyflie2-nrf-firmware\src\swd.c</FilePath>
+            </File>
+            <File>
+              <FileName>ow.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\crazyflie2-nrf-firmware\src\ow.c</FilePath>
+            </File>
+            <File>
+              <FileName>owlnk.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\crazyflie2-nrf-firmware\src\ow\owlnk.c</FilePath>
+            </File>
+            <File>
+              <FileName>ownet.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\crazyflie2-nrf-firmware\src\ow\ownet.c</FilePath>
+            </File>
+            <File>
+              <FileName>owtran.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\crazyflie2-nrf-firmware\src\ow\owtran.c</FilePath>
+            </File>
+            <File>
+              <FileName>crcutil.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\crazyflie2-nrf-firmware\src\ow\crcutil.c</FilePath>
+            </File>
+            <File>
+              <FileName>ds2431.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\crazyflie2-nrf-firmware\src\ds2431.c</FilePath>
+            </File>
+            <File>
+              <FileName>ds28e05.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\crazyflie2-nrf-firmware\src\ds28e05.c</FilePath>
+            </File>
+            <File>
+              <FileName>memory.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\crazyflie2-nrf-firmware\src\memory.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>src/ble</GroupName>
+          <Files>
+            <File>
+              <FileName>ble.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\crazyflie2-nrf-firmware\src\ble\ble.c</FilePath>
+            </File>
+            <File>
+              <FileName>ble_crazyflies.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\crazyflie2-nrf-firmware\src\ble\ble_crazyflies.c</FilePath>
+            </File>
+            <File>
+              <FileName>timeslot.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\crazyflie2-nrf-firmware\src\ble\timeslot.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>nrf51_sdk</GroupName>
+          <Files>
+            <File>
+              <FileName>ble_advdata.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\nrf51_sdk\nrf51822\Source\ble\ble_advdata.c</FilePath>
+            </File>
+            <File>
+              <FileName>ble_conn_params.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\nrf51_sdk\nrf51822\Source\ble\ble_conn_params.c</FilePath>
+            </File>
+            <File>
+              <FileName>ble_srv_common.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\nrf51_sdk\nrf51822\Source\ble\ble_services\ble_srv_common.c</FilePath>
+            </File>
+            <File>
+              <FileName>ble_dis.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\nrf51_sdk\nrf51822\Source\ble\ble_services\ble_dis.c</FilePath>
+            </File>
+            <File>
+              <FileName>softdevice_handler.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\nrf51_sdk\nrf51822\Source\sd_common\softdevice_handler.c</FilePath>
+            </File>
+            <File>
+              <FileName>app_timer.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\nrf51_sdk\nrf51822\Source\app_common\app_timer.c</FilePath>
             </File>
           </Files>
         </Group>
       </Groups>
     </Target>
   </Targets>
-
-  <RTE>
-    <apis/>
-    <components/>
-    <files>
-      <file attr="config" category="source" condition="ARM Compiler" name="Device\Source\arm\arm_startup_nrf51.s">
-        <instance index="0" removed="1">RTE\Device\nRF51822_xxAA\arm_startup_nrf51.s</instance>
-        <component Cclass="Device" Cgroup="Startup" Cvendor="NordicSemiconductor" Cversion="1.0.1" condition="nRF51 Series CMSIS Device"/>
-        <package name="nRF_DeviceFamilyPack" schemaVersion="1.0" url="http://developer.nordicsemi.com/nRF51_SDK/pieces/nRF_DeviceFamilyPack/" vendor="NordicSemiconductor" version="1.1.4"/>
-        <targetInfos/>
-      </file>
-      <file attr="config" category="source" name="Device\Source\system_nrf51.c">
-        <instance index="0" removed="1">RTE\Device\nRF51822_xxAA\system_nrf51.c</instance>
-        <component Cclass="Device" Cgroup="Startup" Cvendor="NordicSemiconductor" Cversion="1.0.1" condition="nRF51 Series CMSIS Device"/>
-        <package name="nRF_DeviceFamilyPack" schemaVersion="1.0" url="http://developer.nordicsemi.com/nRF51_SDK/pieces/nRF_DeviceFamilyPack/" vendor="NordicSemiconductor" version="1.1.4"/>
-        <targetInfos/>
-      </file>
-    </files>
-  </RTE>
 
 </Project>
