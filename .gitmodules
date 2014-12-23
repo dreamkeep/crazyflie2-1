@@ -13,3 +13,4 @@
 [submodule "crazyflie-firmware"]
 	path = crazyflie-firmware
 	url = https://github.com/x893/crazyflie-firmware.git
+	branch = crazyflie2
