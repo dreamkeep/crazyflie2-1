@@ -10,3 +10,6 @@
 [submodule "crazyflie2-stm-bootloader"]
 	path = crazyflie2-stm-bootloader
 	url = https://github.com/x893/crazyflie2-stm-bootloader.git
+[submodule "crazyflie-firmware"]
+	path = crazyflie-firmware
+	url = https://github.com/x893/crazyflie-firmware.git

@@ -21,7 +21,12 @@
 
   <project>
     <PathAndName>.\crazyflie2-stm-bootloader.uvproj</PathAndName>
+  </project>
+
+  <project>
+    <PathAndName>.\crazyflie2-firmware.uvproj</PathAndName>
     <NodeIsActive>1</NodeIsActive>
+    <NodeIsExpanded>1</NodeIsExpanded>
   </project>
 
 </ProjectWorkspace>
