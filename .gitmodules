@@ -1,3 +1,6 @@
 [submodule "crazyflie2-nrf-mbs"]
 	path = crazyflie2-nrf-mbs
 	url = https://github.com/x893/crazyflie2-nrf-mbs.git
+[submodule "crazyflie2-nrf-bootloader"]
+	path = crazyflie2-nrf-bootloader
+	url = https://github.com/x893/crazyflie2-nrf-bootloader.git
